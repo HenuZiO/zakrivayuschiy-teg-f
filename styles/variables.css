@@ -1,1 +1,51 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-main: 'Inter-Variable';
+  --font-accent: 'PressStart2P';
+
+  --font-size-main: 18px;
+  --font-size-accent: 14px;
+  --font-size-title: 65px;
+  --font-size-title-mobile: 49px;
+  --font-size-subtitle: 23px;
+  --font-size-subtitle-mobile: 14px;
+
+  --font-weight-normal: 400;
+  --font-weight-heading: 700;
+  --font-variation-normal: 'wght' 400;
+  --font-variation-heading: 'wght' 700;
+
+  --line-height-default: 1.167;
+  --line-height-accent-default: 1;
+  --line-height-accent-button: 0.9;
+  --line-height-accent-dialog: 1.5;
+
+  --color-bg: #fff;
+  --color-card-bg: #fff;
+  --color-text: #000;
+  --color-border: #000;
+  --color-accent: #000;
+  --color-button: #fff;
+  --color-heart-contour: #000;
+  --color-heart-body: red;
+
+  --border: 2px solid var(--color-border);
+  --text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  --text-stroke: 1px #fff;
+
+  --margin-outside: 100px;
+
+  --min-width-content: 375px;
+  --max-width-content: 700px;
+  --max-width-save-button: 339px;
+  --max-width-modal: 353px;
+
+  --gradient-background: repeating-linear-gradient(
+      to right,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+    linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+}
