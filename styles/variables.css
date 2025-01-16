@@ -17,8 +17,7 @@
   --line-height-accent-button: 0.9;
   --line-height-accent-dialog: 1.5;
 
-  --color-bg: #fff;
-  --color-card-bg: #fff;
+  --color-primary: #fff;
   --color-text: #000;
   --color-border: #000;
   --color-accent: #000;
@@ -36,6 +35,9 @@
   --max-width-content: 700px;
   --max-width-save-button: 339px;
   --max-width-modal: 353px;
+  --max-width-like-button: 130px;
+
+  --min-height-like-button: 38px;
 
   --gradient-background: repeating-linear-gradient(
       to right,

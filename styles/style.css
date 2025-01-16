@@ -14,7 +14,7 @@
   border: var(--border, 2px solid #000);
   overflow: hidden;
   color: var(--color-button, #fff);
-  background-color: var(--color-card-bg, #fff);
+  background-color: var(--color-primary, #fff);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -49,26 +49,6 @@
   mix-blend-mode: difference;
 }
 
-.dialog {
-  position: fixed;
-  inset: 0;
-  border: var(--border, 2px solid #000);
-  padding: 30px;
-}
-
-.dialog[open] {
-  animation: dialog-show 0.3s ease-in-out;
-}
-
-.dialog[open]::backdrop {
-  background-color: rgba(0, 0, 0, 0.75);
-}
-
-.dialog:not([open]) {
-  opacity: 0;
-  pointer-events: none;
-}
-
 /* БАЗОВЫЕ СТИЛИ ДЛЯ ICONS */
 
 .floppy-icon {
@@ -93,6 +73,11 @@
 .like-icon .heart .core {
   fill: transparent;
   transition: fill 0.3s ease;
+}
+
+.contour {
+  fill: var(--color-heart-contour, #000);
+  transition: fill 0.1s linear;
 }
 
 .sparks {
@@ -134,18 +119,51 @@
 }
 
 .like-icon.is-liked .heart {
-  animation: heart-scale 0.3s ease-in forwards;
+  animation: heart-scale 0.3s ease-in;
   animation-delay: 0.1s;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks-beat 0.3s ease-in forwards;
+  animation: sparks-beat 0.3s ease-in;
   animation-delay: 0.3s;
 }
 
-.like-icon:not(.is-liked) .heart .contour {
-  fill: var(--color-heart-contour, #000);
-  transition: fill 0.1s linear;
+/* СТИЛИ ФИЛЬТРОВ ДЛЯ КАРТИНОК */
+
+.filter-sepia-weak {
+  filter: sepia(30%);
+}
+
+.filter-sepia-strong {
+  filter: sepia(80%);
+}
+
+.filter-grayscale {
+  filter: grayscale(70%);
+}
+
+.filter-saturate-weak {
+  filter: saturate(150%);
+}
+
+.filter-saturate-strong {
+  filter: saturate(500%);
+}
+
+.filter-hue {
+  filter: hue-rotate(35deg);
+}
+
+.filter-invert {
+  filter: invert(100%);
+}
+
+.filter-contrast {
+  filter: contrast(50%);
+}
+
+.filter-blur {
+  filter: blur(3px);
 }
 
 /* СТИЛИ ДЛЯ BODY */
@@ -155,7 +173,7 @@
   font-family: var(--font-main, 'Inter-Variable', sans-serif);
   font-size: var(--font-size-main, 18px);
   line-height: var(--line-height-default, 1.167);
-  background-color: var(--color-bg, #fff);
+  background-color: var(--color-primary, #fff);
   background-image: var(--gradient-background);
   background-size: cover;
   background-attachment: fixed;
@@ -176,11 +194,11 @@
   border: var(--border, 2px solid #000);
   padding-inline: clamp(14px, 8.36vw, 120.5px);
   padding-block: clamp(120px, 8.88vw, 128px);
-  background-color: var(--color-card-bg, #fff);
+  background-color: var(--color-primary, #fff);
 }
 
 .header__title,
-.header__subtitle {
+.header__slogan {
   font-family: var(--font-accent, 'PressStart2P', monospace);
   line-height: var(--line-height-accent-default, 1);
   text-transform: uppercase;
@@ -194,7 +212,7 @@
   );
 }
 
-.header__subtitle {
+.header__slogan {
   font-size: clamp(
     var(--font-size-subtitle-mobile, 14px),
     0.6769rem + 0.8451vw,
@@ -230,7 +248,7 @@
 
 .card {
   border: var(--border, 2px solid #000);
-  background-color: var(--color-card-bg, #fff);
+  background-color: var(--color-primary, #fff);
 }
 
 .card__title {
@@ -279,41 +297,9 @@
 .card__cover-img {
   display: block;
   object-fit: cover;
-  object-position: right 3.5% bottom 50%;
+  object-position: center;
   inline-size: 100%;
   aspect-ratio: 1 / 1;
-}
-
-.card--zero-sprint .card__cover-img {
-  filter: none;
-}
-
-.card--first-sprint-start .card__cover-img {
-  filter: sepia(10%) grayscale(70%);
-}
-
-.card--first-sprint-end .card__cover-img {
-  filter: saturate(500%);
-}
-
-.card--second-sprint-start .card__cover-img {
-  filter: hue-rotate(35deg);
-}
-
-.card--second-sprint-end .card__cover-img {
-  filter: invert(100%) contrast(50%);
-}
-
-.card--third-sprint-start .card__cover-img {
-  filter: grayscale(70%) sepia(80%);
-}
-
-.card--third-sprint-end .card__cover-img {
-  filter: blur(5px);
-}
-
-.card--fourth-sprint-start .card__cover-img {
-  filter: hue-rotate(30deg) saturate(150%) contrast(40%) blur(2px);
 }
 
 .card__text {
@@ -349,35 +335,53 @@
 }
 
 .card__like-button {
-  padding: 6px 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-inline-size: var(--max-width-like-button, 138px);
+  inline-size: 100%;
+  min-block-size: var(--min-height-like-button);
 }
 
 /* СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА СОХРАНЕНИЯ НА ПАМЯТЬ */
 
-.save-memory {
+.dialog {
+  position: fixed;
+  inset: 0;
+  border: var(--border, 2px solid #000);
+  padding: 30px;
   max-inline-size: var(--max-width-modal, 353px);
 }
 
-.save-memory[open] {
+.dialog[open] {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.save-memory__content {
+.dialog[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dialog__content {
   font-family: var(--font-accent, 'PressStart2P', monospace);
   font-size: var(--font-size-accent, 14px);
   line-height: var(--line-height-accent-dialog, 1.5);
   text-transform: uppercase;
 }
 
-.save-memory[open] .save-memory__content {
+.dialog[open] .dialog__content {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.save-memory__close-button {
+.dialog__close-button {
   padding: 10px;
   text-transform: uppercase;
   inline-size: 100%;
