@@ -317,6 +317,7 @@
   flex-direction: column;
   gap: 27px;
   line-height: var(--line-height-default);
+  font-variation-settings: var(--font-variation-normal);
 }
 
 .card__likes-inner {
