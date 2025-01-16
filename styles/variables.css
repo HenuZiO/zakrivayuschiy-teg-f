@@ -1,6 +1,6 @@
 :root {
-  --font-main: 'Inter-Variable';
-  --font-accent: 'PressStart2P';
+  --font-main: 'Inter-Variable', sans-serif;
+  --font-accent: 'PressStart2P', monospace;
 
   --font-size-main: 18px;
   --font-size-accent: 14px;
@@ -12,7 +12,7 @@
   --font-weight-normal: 400;
   --font-weight-heading: 700;
   --font-variation-normal: 'wght' 400;
-  --font-variation-heading: 'wght' 700;
+  --font-variation-heading: 'wght' 785;
 
   --line-height-default: 1.167;
   --line-height-accent-default: 1;
