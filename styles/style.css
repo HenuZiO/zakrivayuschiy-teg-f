@@ -138,6 +138,10 @@
   filter: sepia(80%);
 }
 
+.filter-brightness {
+  filter: brightness(10%);
+}
+
 .filter-grayscale {
   filter: grayscale(70%);
 }
