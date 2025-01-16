@@ -9,8 +9,8 @@
   --font-size-subtitle: 23px;
   --font-size-subtitle-mobile: 14px;
 
-  --font-variation-normal: 'wght' 400;
-  --font-variation-heading: 'wght' 700;
+  --font-variation-normal: 400;
+  --font-variation-heading: 700;
 
   --line-height-default: 1.167;
   --line-height-accent-default: 1;

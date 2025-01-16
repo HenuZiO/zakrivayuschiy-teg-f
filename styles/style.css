@@ -161,7 +161,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: var(--font-variation-normal);
+  font-variation-settings: 'wght' var(--font-variation-normal, 400);
 }
 
 /* СТИЛИ ДЛЯ HEADER */
@@ -232,7 +232,7 @@
 .card__title {
   padding: 5px 10px;
   font-size: var(--font-size-main);
-  font-variation-settings: var(--font-variation-heading);
+  font-variation-settings: 'wght' var(--font-variation-heading, 700);
 }
 
 .card__content {
@@ -317,7 +317,6 @@
   flex-direction: column;
   gap: 27px;
   line-height: var(--line-height-default);
-  font-variation-settings: var(--font-variation-normal);
 }
 
 .card__likes-inner {
