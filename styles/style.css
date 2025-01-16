@@ -182,7 +182,7 @@
 .header__title,
 .header__subtitle {
   font-family: var(--font-accent);
-  font-weight: var(--font-weight-normal);
+  font-variation-settings: var(--font-variation-normal);
   line-height: var(--line-height-accent-default);
   text-transform: uppercase;
 }
